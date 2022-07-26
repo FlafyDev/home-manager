@@ -189,7 +189,7 @@ in {
         (map (script: 
           (if builtins.hasAttr "fonts" script then
               (map (font: {
-                xdg.configFile."mpv/fonts/${font}".source = "test/share/mpv/fonts/${font}";
+                xdg.configFile."mpv/fonts/${font}".source = "${script}/share/mpv/fonts/${font}";
               }) script.fonts)
             else []
           ))
